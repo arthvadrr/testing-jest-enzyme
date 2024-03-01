@@ -2,7 +2,6 @@ import {actionTypes} from "./reducer.ts";
 
 export interface State {
     repositories: any[];
-    loading: boolean;
     error: any | null;
 }
 
