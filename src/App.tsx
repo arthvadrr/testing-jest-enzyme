@@ -1,7 +1,6 @@
-import RepoList from './RepoList';
+import RepoList from "./RepoList.tsx";
 
 function App() {
-
   return (
     <>
       <RepoList />

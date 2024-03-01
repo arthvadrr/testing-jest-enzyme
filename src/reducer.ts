@@ -1,4 +1,7 @@
-export const initialState = {
+import {State} from "./interfaces.ts";
+import {Action} from "./types.ts";
+
+export const initialState: State = {
     repositories: [],
     loading: false,
     error: null,
@@ -10,14 +13,14 @@ export const actionTypes = {
     FETCH_FAILURE: 'FETCH_FAILURE',
 };
 
-const reducer = (state, action) => {
+const reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case actionTypes.FETCH_REQUEST:
-            return { ...state, loading: true, error: null };
+            return {...state, loading: true, error: null};
         case actionTypes.FETCH_SUCCESS:
-            return { ...state, loading: false, repositories: action.payload };
+            return {...state, loading: false, repositories: action.payload};
         case actionTypes.FETCH_FAILURE:
-            return { ...state, loading: false, error: action.payload };
+            return {...state, loading: false, error: action.payload};
         default:
             return state;
     }
